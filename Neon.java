@@ -81,5 +81,6 @@ public class Neon {
     public static void main(String[] args) {
         Neon obj = new Neon(); // call method funcs
         obj.accept_calc();
+        obj.sc.close();
     }
 }

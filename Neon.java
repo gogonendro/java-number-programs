@@ -2,14 +2,14 @@ import java.util.*;
 
 public class Neon {
     Scanner sc = new Scanner(System.in);
-    int n, m;
+    int n, m; // declare var
 
-    Neon() {
+    Neon() { // constructor to intialize vars
         n = 0;
         m = 0;
     }
 
-    boolean isNeon(int x) {
+    boolean isNeon(int x) { // check for neon
         int sq = x * x;
         int sum = 0;
         int t = sq;
@@ -19,10 +19,10 @@ public class Neon {
             sum = sum + d;
             t = t / 10;
         }
-        return (sum == x);
+        return (sum == x); // returns whether a number is neon by true or false
     }
 
-    void accept_calc() {
+    void accept_calc() { // accept number and calculate
         System.out.println("Enter a number:");
         n = sc.nextInt();
 
@@ -31,15 +31,15 @@ public class Neon {
             System.out.println("Enter another number:");
             m = sc.nextInt();
 
-            boolean found = false;
+            boolean found = false; // default set to false
             System.out.println("Neon numbers between " + n + " and " + (n + m) + " are: ");
             for (int i = n + 1; i < n + m; i++) {
                 if (isNeon(i)) {
                     System.out.println(i);
-                    found = true;
+                    found = true; // change found to true when neon is found
                 }
             }
-            if (!found) {
+            if (!found) { // when not found print the message
                 System.out.println("No Neon numbers between " + n + " and " + (n + m) + " present");
             }
         } else {
@@ -79,7 +79,7 @@ public class Neon {
      */
 
     public static void main(String[] args) {
-        Neon obj = new Neon();
+        Neon obj = new Neon(); // call method funcs
         obj.accept_calc();
     }
 }

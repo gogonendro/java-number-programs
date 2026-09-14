@@ -9,25 +9,20 @@ public class Fascinating {
     }
 
     boolean isFasc(int x) {
-        int d = 0;
-        int t = 0;
-        int c = 0;
-
-        int p2 = x * 2;
-        int p3 = x * 3;
-        int concat = (x + 1000000) + (p2 * 1000) + (p3);
-
-        for (int i = 1; i < 10; i++) {
-            t = concat;
-            while (t > 0) {
-                d = t % 10;
-                if (d == i) {
-                    c++;
-                }
-                t = t / 10;
+        String concat = "" + x + (x * 2) + (x * 3);
+        int count[] = new int[10];
+        for (int i = 0; i < concat.length(); i++) {
+            int dig = concat.charAt(i) - '0';
+            if (dig >= 1 && dig <= 9) {
+                count[dig]++;
             }
         }
-        return c > 1;
+        for (int i = 1; i <= 9; i++) {
+            if (count[i] != 1) {
+                return false;
+            }
+        }
+        return true;
     }
 
     void acc_calc() {
